@@ -77,6 +77,7 @@ namespace Gezifoni.Controllers
             loginUser.ProfileImageFileName = "user_boy.png";
 
             // TODO : Veritabanından kullanıcı adı ya da email varlık kontrolü..
+            ModelState.Remove(nameof(loginUser.RoleName));
 
             if (ModelState.IsValid)
             {
@@ -113,13 +114,17 @@ namespace Gezifoni.Controllers
             if (IsAuthenticatedUser() == false) return RedirectToAction("Index", "Home");
             if (IsAdmin() == false) return RedirectToAction("Index", "Home");
 
+            ModelState.Remove(nameof(loginUser.RoleName));
+
             if (ModelState.IsValid)
             {
                 LoginUser user = db.Uyeler.Find(loginUser.Id);
 
                 user.Name = loginUser.Name;
-                user.Password = loginUser.Password;
                 user.Surname = loginUser.Surname;
+                user.Email = loginUser.Email;
+                user.Username = loginUser.Username;
+                user.Password = loginUser.Password;
 
                 db.SaveChanges();
                 return RedirectToAction("Index");
