@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Gezifoni.ModalLogin.Models.LoginUser>
+
+@{
+    ViewBag.Title = "Üyeler";
+}
+
+<link href="~/Content/admin.css" rel="stylesheet" />
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            </div>
+        </div>
+    </div>
+</header>
+<article>
+    <div class="container">
+        <div class="row">
+            <br />
+            <h2>Üyeleri Yönet</h2>
+
+            <p>
+                <a class="btn btn-primary hint--right hint--bounce hint--info" data-hint="Yeni Üye Ekle" href="/Member/Create">
+                    <span class="glyphicon glyphicon-plus"></span> Yeni Ekle
+                </a>
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Surname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Username)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RoleName)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Surname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RoleName)
+                        </td>
+                        <td>
+                            <a class="btn btn-warning hint--top hint--bounce hint--warning" data-hint="Üye Düzenle" href="/Member/Edit/@item.Id" title="Üye Düzenle">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+
+                            @if (item.RoleName != "admin")
+                            {
+                                <a class="btn btn-info hint--top hint--bounce hint--info" data-hint="Yönetici Yap" href="/Member/ChangeRole/@item.Id?role=admin" title="Yönetici Yap">
+                                    <span class="glyphicon glyphicon-star"></span>
+                                </a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-info hint--top hint--bounce hint--info" data-hint="Normal Üye Yap" href="/Member/ChangeRole/@item.Id?role=member" title="Normal Üye Yap">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </a>
+                            }
+
+                            <a class="btn btn-danger hint--top hint--bounce hint--error" data-hint="Üye Sil" href="/Member/Delete/@item.Id" title="Üye Sil">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</article>
+
+<script src="~/Scripts/admin.js"></script>

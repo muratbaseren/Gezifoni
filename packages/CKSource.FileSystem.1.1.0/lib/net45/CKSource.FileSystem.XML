@@ -1,0 +1,589 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CKSource.FileSystem</name>
+    </assembly>
+    <members>
+        <member name="T:CKSource.FileSystem.Exceptions.FileMissingException">
+            <summary>
+            Represents file missing error.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FileMissingException.#ctor">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileMissingException"/>.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FileMissingException.#ctor(System.String)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileMissingException"/>.
+            </summary>
+            <param name="filePath">A path to the missing file.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FileMissingException.#ctor(System.String,System.String)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileMissingException"/>.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+            <param name="filePath">A path to the missing file.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FileMissingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileMissingException"/>.
+            </summary>
+            <param name="filePath">A path to the missing file.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FileMissingException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileMissingException"/>.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+            <param name="filePath">A path to the missing file.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="P:CKSource.FileSystem.Exceptions.FileMissingException.FilePath">
+            <summary>
+            Gets the missing file path.
+            </summary>
+        </member>
+        <member name="T:CKSource.FileSystem.Exceptions.FileSystemException">
+            <summary>
+            Represents base file system error.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FileSystemException.#ctor">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileSystemException"/>.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FileSystemException.#ctor(System.String)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileSystemException"/>.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FileSystemException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileSystemException"/>.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="T:CKSource.FileSystem.Exceptions.FolderMissingException">
+            <summary>
+            Represents folder missing error.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FolderMissingException.#ctor">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FolderMissingException"/>.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FolderMissingException.#ctor(System.String)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileMissingException"/>.
+            </summary>
+            <param name="folderPath">A path to the missing folder.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FolderMissingException.#ctor(System.String,System.String)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileMissingException"/>.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+            <param name="folderPath">A path to the missing folder.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FolderMissingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileMissingException"/>.
+            </summary>
+            <param name="folderPath">A path to the missing folder.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.FolderMissingException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.FileMissingException"/>.
+            </summary>
+            <param name="message">A message that describes the error.</param>
+            <param name="folderPath">A path to the missing folder.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="P:CKSource.FileSystem.Exceptions.FolderMissingException.FolderPath">
+            <summary>
+            Gets the missing folder path.
+            </summary>
+        </member>
+        <member name="T:CKSource.FileSystem.Exceptions.PermissionDeniedException">
+            <summary>
+            Represents permission denied error.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.PermissionDeniedException.#ctor">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.PermissionDeniedException"/>.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.PermissionDeniedException.#ctor(System.String)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.PermissionDeniedException"/>.
+            </summary>
+            <param name="path">A path that caused this exception.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.PermissionDeniedException.#ctor(System.String,System.String)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.PermissionDeniedException"/>.
+            </summary>
+            <param name="path">A path that caused this exception.</param>
+            <param name="message">A message that describes the error.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.PermissionDeniedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.PermissionDeniedException"/>.
+            </summary>
+            <param name="path">A path that caused this exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.Exceptions.PermissionDeniedException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.Exceptions.PermissionDeniedException"/>.
+            </summary>
+            <param name="path">A path that caused this exception.</param>
+            <param name="message">A message that describes the error.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="P:CKSource.FileSystem.Exceptions.PermissionDeniedException.Path">
+            <summary>
+            Gets the path that caused this exception.
+            </summary>
+        </member>
+        <member name="T:CKSource.FileSystem.FileListResult">
+            <summary>
+            A result of file listing.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.FileListResult.#ctor(System.Collections.Generic.IReadOnlyCollection{CKSource.FileSystem.FileInfo},CKSource.FileSystem.IFileListContinuation)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.FileListResult"/>.
+            </summary>
+            <param name="files">A collection of file informations.</param>
+            <param name="fileListContinuation">A continuation token. A null value indicates end of listing.</param>
+        </member>
+        <member name="P:CKSource.FileSystem.FileListResult.Files">
+            <summary>
+            Gets the collection of file informations.
+            </summary>
+        </member>
+        <member name="P:CKSource.FileSystem.FileListResult.FileListContinuation">
+            <summary>
+            Gets the continuation token. A null value indicates end of listing.
+            </summary>
+        </member>
+        <member name="T:CKSource.FileSystem.FolderInfo">
+            <summary>
+            Basic folder information.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.FolderInfo.#ctor(System.String)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.FolderInfo"/>.
+            </summary>
+            <param name="name">A folder name.</param>
+        </member>
+        <member name="P:CKSource.FileSystem.FolderInfo.Name">
+            <summary>
+            Gets the folder name.
+            </summary>
+        </member>
+        <member name="T:CKSource.FileSystem.FileInfo">
+            <summary>
+            Basic file information.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.FileInfo.#ctor(System.String)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.FileInfo"/>.
+            </summary>
+            <param name="name">A name of the file.</param>
+        </member>
+        <member name="P:CKSource.FileSystem.FileInfo.UpdateDate">
+            <summary>
+            Sets the last file update date.
+            </summary>
+        </member>
+        <member name="P:CKSource.FileSystem.FileInfo.Size">
+            <summary>
+            Sets the file size in bytes.
+            </summary>
+        </member>
+        <member name="P:CKSource.FileSystem.FileInfo.MimeType">
+            <summary>
+            Sets the file mime type.
+            </summary>
+        </member>
+        <member name="P:CKSource.FileSystem.FileInfo.Name">
+            <summary>
+            Gets the file name.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.FileInfo.GetUpdateDate">
+            <summary>
+            Asynchronously gets the last update date and time.
+            </summary>
+            <returns>The last update date and time.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.FileInfo.GetUpdateDate(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously gets the last update date and time.
+            </summary>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>The last update date and time.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.FileInfo.GetSize">
+            <summary>
+            Asynchronously gets the file size in bytes.
+            </summary>
+            <returns>The file size in bytes.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.FileInfo.GetSize(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously gets the file size in bytes.
+            </summary>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>The file size in bytes.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.FileInfo.GetMimeType">
+            <summary>
+            Asynchronously gets the mime type.
+            </summary>
+            <returns>The mime type.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.FileInfo.GetMimeType(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously gets the mime type.
+            </summary>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>The mime type.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.FileInfo.LoadAsync(System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously loads properties.
+            </summary>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="T:CKSource.FileSystem.FolderListResult">
+            <summary>
+            A result of folder listing.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.FolderListResult.#ctor(System.Collections.Generic.IReadOnlyCollection{CKSource.FileSystem.FolderInfo},CKSource.FileSystem.IFolderListContinuation)">
+            <summary>
+            Constructs a new instance of <see cref="T:CKSource.FileSystem.FolderListResult"/>.
+            </summary>
+            <param name="folders">A collection of folder informations.</param>
+            <param name="folderListContinuation">A continuation token. A null value indicates end of listing.</param>
+        </member>
+        <member name="P:CKSource.FileSystem.FolderListResult.Folders">
+            <summary>
+            Gets the collection of folder informations.
+            </summary>
+        </member>
+        <member name="P:CKSource.FileSystem.FolderListResult.FolderListContinuation">
+            <summary>
+            Gets the continuation token. A null value indicates end of listing.
+            </summary>
+        </member>
+        <member name="T:CKSource.FileSystem.IFileListContinuation">
+            <summary>
+            File listing continuation token.
+            </summary>
+        </member>
+        <member name="T:CKSource.FileSystem.IFileSystem">
+            <summary>
+            A file system interface.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.CreateFolderAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously creates new folder.
+            </summary>
+            <param name="path">A path to the new folder.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.DeleteFileAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously deletes a file.
+            </summary>
+            <param name="path">A path to the file.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.DeleteFolderAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously deletes a folder.
+            </summary>
+            <param name="path">A path to the folder.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.DeleteFolderAsync(System.String,System.Action{System.Int32,System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously deletes a folder.
+            </summary>
+            <param name="path">A path to the folder.</param>
+            <param name="progressAction">An action fired when progress is updated.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.MoveFileAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously moves a file.
+            </summary>
+            <param name="srcPath">A path to the file.</param>
+            <param name="destPath">A path to the destination file.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.MoveFolderAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously moves a folder.
+            </summary>
+            <param name="srcPath">A path to the folder.</param>
+            <param name="destPath">A path to the destination folder.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.MoveFolderAsync(System.String,System.String,System.Action{System.Int32,System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously moves a folder.
+            </summary>
+            <param name="srcPath">A path to the folder.</param>
+            <param name="destPath">A path to the destination folder.</param>
+            <param name="progressAction">An action fired when progress is updated.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.CopyFileAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously copies a file.
+            </summary>
+            <param name="srcPath">A path to the file.</param>
+            <param name="destPath">A path to the destination file.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.FileExistsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously checks whether a file exists.
+            </summary>
+            <param name="path">A path to the file.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>True if file exists, false otherwise.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.FolderExistsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously checks whether a folder exists.
+            </summary>
+            <param name="path">A path to the folder.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>True if folder exists, false otherwise.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.WriteAsync(System.IO.Stream,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously writes file content.
+            </summary>
+            <param name="fileStream">A stream with content to write.</param>
+            <param name="path">A path to the file.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.ReadAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously reads file content.
+            </summary>
+            <param name="path">A path to the file.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>A stream with file content.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.GetFolderInfosAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously lists folder informations.
+            </summary>
+            <param name="path">A path to the folder.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>A folder list result.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.GetFolderInfosAsync(CKSource.FileSystem.IFolderListContinuation,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously lists folder informations.
+            </summary>
+            <param name="folderListContinuation">A folder list continuation.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>A folder list result.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.GetFileInfosAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously lists file informations.
+            </summary>
+            <param name="path">A path to the folder.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>A file list result.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.GetFileInfosAsync(CKSource.FileSystem.IFileListContinuation,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously lists file informations.
+            </summary>
+            <param name="fileListContinuation">A file list continuation.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>A file list result.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.GetFolderInfoAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asychronously gets folder information.
+            </summary>
+            <param name="path">A path to the folder.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>A folder information.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.GetFileInfoAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asychronously gets file information.
+            </summary>
+            <param name="path">A path to the file.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>A file information.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.IFileSystem.GetUrlAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously gets resource URL. May return null if URL is not available.
+            </summary>
+            <param name="path">A path to the resource.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>An URL to the resource or null if URL is not available.</returns>
+        </member>
+        <member name="T:CKSource.FileSystem.IFolderListContinuation">
+            <summary>
+            Folder listing continuation token.
+            </summary>
+        </member>
+        <member name="T:CKSource.FileSystem.Path">
+            <summary>
+            A collection of helper methods for manipulating paths.
+            </summary>
+        </member>
+        <member name="F:CKSource.FileSystem.Path.ExtensionChar">
+            <summary>
+            The character used for separating file name and extension.
+            </summary>
+        </member>
+        <member name="F:CKSource.FileSystem.Path.Separator">
+            <summary>
+            The character used for separating path parts.
+            </summary>
+            <seealso cref="F:CKSource.FileSystem.Path.SeparatorString"/>
+        </member>
+        <member name="F:CKSource.FileSystem.Path.AlternativeSeparator">
+            <summary>
+            The alternative character used for separating path parts.
+            </summary>
+        </member>
+        <member name="F:CKSource.FileSystem.Path.SeparatorString">
+            <summary>
+            The string used for separating path parts.
+            </summary>
+            <seealso cref="F:CKSource.FileSystem.Path.Separator"/>
+        </member>
+        <member name="F:CKSource.FileSystem.Path.InvalidNames">
+            <summary>
+            The collection of invalid file and folder names.
+            </summary>
+        </member>
+        <member name="P:CKSource.FileSystem.Path.InvalidFileNameChars">
+            <summary>
+            The collection of invalid file name characters.
+            </summary>
+        </member>
+        <member name="P:CKSource.FileSystem.Path.InvalidPathChars">
+            <summary>
+            The collection of invalid path characters.
+            </summary>
+        </member>
+        <member name="P:CKSource.FileSystem.Path.InvalidFolderNameChars">
+            <summary>
+            The collection of invalid folder name characters.
+            </summary>
+        </member>
+        <member name="M:CKSource.FileSystem.Path.Combine(System.String,System.String[])">
+            <summary>
+            Combines multiple path parts into one.
+            </summary>
+            <param name="basePath">A base path.</param>
+            <param name="paths">A path segments added to base path.</param>
+            <returns>A combined path.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.Path.GetParentPath(System.String)">
+            <summary>
+            Returns parent path name for the given path.
+            </summary>
+            <param name="path">A path for which parent will be returned.</param>
+            <returns>A parent path.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.Path.GetFolderName(System.String)">
+            <summary>
+            Gets the folder name.
+            </summary>
+            <remarks>
+            Given path must point to the folder.
+            </remarks>
+            <param name="path">A path to folder.</param>
+            <returns>A folder name.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.Path.GetFileName(System.String)">
+            <summary>
+            Gets file name for given path.
+            </summary>
+            <param name="path">A path to the file.</param>
+            <returns>A file name.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.Path.GetFileNameWithoutExtension(System.String)">
+            <summary>
+            Gets file name without extension for given path.
+            </summary>
+            <param name="path">A path to the file.</param>
+            <returns>A file name without extension.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.Path.GetExtension(System.String)">
+            <summary>
+            Gets the extension of a file for given path.
+            </summary>
+            <param name="path">A path to the file.</param>
+            <returns>An extension.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.Path.IsFileNameValid(System.String)">
+            <summary>
+            Determines wheter file name is valid.
+            </summary>
+            <param name="fileName">A file name to check.</param>
+            <returns>True if file name is valid, false otherwise.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.Path.IsFolderNameValid(System.String)">
+            <summary>
+            Determines wheter folder name is valid.
+            </summary>
+            <param name="folderName">A folder name to check.</param>
+            <returns>True if folder name is valid, false otherwise.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.Path.IsPathValid(System.String)">
+            <summary>
+            Determines wheter path is valid.
+            </summary>
+            <param name="path">A path to check.</param>
+            <returns>True if path is valid, false otherwise.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.Path.IsFolder(System.String)">
+            <summary>
+            Checks whether a path points to a folder.
+            </summary>
+            <param name="path">A path to check.</param>
+            <returns>True if path is a folder, false otherwise.</returns>
+        </member>
+        <member name="M:CKSource.FileSystem.Path.IsAbsolute(System.String)">
+            <summary>
+            Checks whether a path is absolute.
+            </summary>
+            <param name="path">A path to check.</param>
+            <returns>True if path is absolute, false otherwise.</returns>
+        </member>
+    </members>
+</doc>

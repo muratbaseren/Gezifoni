@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Mekan>
+
+@{
+    ViewBag.Title = "Şehrin Mekanları";
+}
+
+<link href="~/Content/admin.css" rel="stylesheet" />
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            </div>
+        </div>
+    </div>
+</header>
+<article>
+    <div class="container">
+        <div class="row">
+            <br />
+            <h2>@ViewBag.CityName Şehrinin Mekanları</h2>
+
+            <p>
+                <a class="btn btn-primary hint--right hint--bounce hint--info" data-hint="Yeni Mekan Ekle" href="/Place/Create/@ViewBag.CityId">
+                    <span class="glyphicon glyphicon-plus"></span> Yeni Ekle
+                </a>
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Adi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Adres)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tel)
+                    </th>
+                    <th></th>
+                </tr>
+
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Adi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Adres)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tel)
+                        </td>
+                        <td>
+                            <a class="btn btn-warning hint--top hint--bounce hint--warning" data-hint="Mekan Düzenle" href="/Place/Edit/@item.Id" title="Mekan Düzenle">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+
+                            <a class="btn btn-danger hint--top hint--bounce hint--error" data-hint="Mekan Sil" href="/Place/Delete/@item.Id" title="Mekan Sil">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </a>
+
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            <p>
+                <a class="btn btn-danger" href="/City/Index">
+                    <span class="glyphicon glyphicon-arrow-left"></span> Şehirlere Dön!
+                </a>
+            </p>
+        </div>
+    </div>
+</article>
+
+<script src="~/Scripts/admin.js"></script>

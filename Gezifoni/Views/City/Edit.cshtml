@@ -1,0 +1,114 @@
+﻿@model Gezifoni.Models.Sehir
+
+@{
+    ViewBag.Title = "Şehir Düzenle";
+}
+<link href="~/Content/admin.css" rel="stylesheet" />
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            </div>
+        </div>
+    </div>
+</header>
+<article>
+    <div class="container">
+        <div class="row">
+            <br />
+            <h2>Düzenle</h2>
+
+            @using (Html.BeginForm("Edit", "City", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Şehir</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Adi, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Adi, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Adi, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Resmi, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="file" class="form-control" id="cityImage" name="cityImage" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Slogan, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Slogan, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Slogan, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Tarihi, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Tarihi, new { @class = "form-control" } )
+                            @Html.ValidationMessageFor(model => model.Tarihi, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.GezilecekYer, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.GezilecekYer, new { @class = "form-control" } )
+                            @Html.ValidationMessageFor(model => model.GezilecekYer, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Yemekler, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.Yemekler, new { @class = "form-control" } )
+                            @Html.ValidationMessageFor(model => model.Yemekler, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DigerBilgiler, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.DigerBilgiler, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.DigerBilgiler, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Kaydet" class="btn btn-warning" />
+                            @Html.ActionLink("Vazgeç", "Index", null, new { @class = "btn btn-danger" })
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</article>
+
+<script src="~/Scripts/admin.js"></script>
+<script src="~/Scripts/ckeditor/config.js"></script>
+<script>
+
+    $(function () {
+
+        CKEDITOR.replace("Tarihi");
+        CKEDITOR.replace("GezilecekYer");
+        CKEDITOR.replace("Yemekler");
+        CKEDITOR.replace("DigerBilgiler");
+    })
+
+</script>

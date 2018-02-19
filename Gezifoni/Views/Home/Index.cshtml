@@ -1,0 +1,47 @@
+﻿@model List<Sehir>
+@{
+    ViewBag.Title = "GeziFoni";
+}
+
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('../../images/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>GeziFoni</h1>
+                    <hr class="small">
+                    <span class="subheading">Yeni Şehir Rehberciniz</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            @foreach (Sehir sehir in Model)
+            {
+                <div class="post-preview">
+                    <a href="/City/Detail/@sehir.Id">
+                        <h2 class="post-title">
+                            @sehir.Adi
+                        </h2>
+                        <h3 class="post-subtitle">
+                            @sehir.Slogan
+                        </h3>
+                    </a>
+                    <p class="post-meta"><a href="/Home/SearchByUserName/@sehir.EkleyenUyeAdi">@sehir.EkleyenUyeAdi</a> tarafından 24.01.2015 tarihinde eklendi</p>
+                </div>
+                <hr>
+            }
+            <!-- Pager -->
+            @*<ul class="pager">
+                <li class="next">
+                    <a href="#">Diğer şehirler &rarr;</a>
+                </li>
+            </ul>*@
+        </div>
+    </div>
+</div>

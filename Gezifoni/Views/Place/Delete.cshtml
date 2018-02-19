@@ -1,0 +1,46 @@
+﻿@model Gezifoni.Models.Mekan
+
+@{
+    ViewBag.Title = "Mekan Sil";
+}
+<link href="~/Content/admin.css" rel="stylesheet" />
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            </div>
+        </div>
+    </div>
+</header>
+<article>
+    <div class="container">
+        <div class="row">
+            <br />
+            <h2>Mekan Sil</h2>
+
+            <h3>@Model.Adi.ToUpper() isimli mekan silinsin mi?</h3>
+            <div>
+                <hr />
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <button class="btn btn-danger" type="submit">
+                            <span class="glyphicon glyphicon-trash"></span> Sil
+                        </button>
+                        <a class="btn btn-default" href="/Place/Index/@Model.SehirId">
+                            <span class="glyphicon glyphicon-remove"></span> Vazgeç
+                        </a>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</article>
+
+<script src="~/Scripts/admin.js"></script>

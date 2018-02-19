@@ -1,0 +1,431 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CKSource.CKFinder.Connector.Config</name>
+    </assembly>
+    <members>
+        <member name="T:CKSource.CKFinder.Connector.Config.ConnectorConfigurationConfigExtensions">
+            <summary>
+            Extensions for the <see cref="T:CKSource.CKFinder.Connector.Core.Builders.ConnectorConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="M:CKSource.CKFinder.Connector.Config.ConnectorConfigurationConfigExtensions.LoadConfig(CKSource.CKFinder.Connector.Core.Builders.ConnectorConfiguration,System.Xml.XmlNode)">
+            <summary>
+            Loads config from <c>Xml</c>.
+            </summary>
+            <param name="connectorConfiguration">The connector configuration.</param>
+            <param name="rootNode">A root node of <c>Xml</c> document.</param>
+            <returns>The connector configuration.</returns>
+        </member>
+        <member name="M:CKSource.CKFinder.Connector.Config.ConnectorConfigurationConfigExtensions.LoadConfig(CKSource.CKFinder.Connector.Core.Builders.ConnectorConfiguration)">
+            <summary>
+            Loads config from application configuration file.
+            </summary>
+            <param name="connectorConfiguration">The connector configuration.</param>
+            <returns>The connector configuration.</returns>
+        </member>
+        <member name="M:CKSource.CKFinder.Connector.Config.ConnectorConfigurationConfigExtensions.LoadConfig(CKSource.CKFinder.Connector.Core.Builders.ConnectorConfiguration,System.String)">
+            <summary>
+            Loads config from a file.
+            </summary>
+            <param name="connectorConfiguration">The connector configuration.</param>
+            <param name="configurationFileName">A file name.</param>
+            <returns>The connector configuration.</returns>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.FileSystemFactory">
+            <summary>
+            A file system factory.
+            </summary>
+            <remarks>
+            It is used to connect file systems declared in configuration with their implementation.
+            </remarks>
+        </member>
+        <member name="M:CKSource.CKFinder.Connector.Config.FileSystemFactory.RegisterFileSystem(System.String,System.Func{System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},CKSource.FileSystem.IFileSystem})">
+            <summary>
+            Registers new file system type.
+            </summary>
+            <param name="name">A name of the file system as it will be used in configuration.</param>
+            <param name="fileSystemBuilder">A builder for the file system.</param>
+        </member>
+        <member name="M:CKSource.CKFinder.Connector.Config.FileSystemFactory.RegisterFileSystem``1">
+            <summary>
+            Registers new file system type.
+            </summary>
+            <remarks>
+            Currently supports LocalFileSystem, AmazonFileSystem, AzureFileSystem, DropboxFileSystem and FtpFileSystem.
+            </remarks>
+            <typeparam name="T">A type of the file system.</typeparam>
+        </member>
+        <member name="M:CKSource.CKFinder.Connector.Config.FileSystemFactory.RegisterFileSystem(System.Type)">
+            <summary>
+            Registers new file system type.
+            </summary>
+            <remarks>
+            Currently supports LocalFileSystem, AmazonFileSystem, AzureFileSystem, DropboxFileSystem and FtpFileSystem.
+            </remarks>
+            <param name="fileSystemType">A type of the file system.</param>
+        </member>
+        <member name="M:CKSource.CKFinder.Connector.Config.FileSystemFactory.Create(System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String})">
+            <summary>
+            Creates file system.
+            </summary>
+            <param name="name">A name of the file system.</param>
+            <param name="options">A dictionary of options for the file system.</param>
+            <returns>A file system instance.</returns>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.AccessControlNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.AccessControlNode.Roles">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.License">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.Images">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.Thumbnails">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.Backends">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.Resources">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.AccessControl">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.HtmlExtensions">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.HideFolders">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.HideFiles">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.Plugins">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.OverwriteOnUpload">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.CheckDoubleExtension">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.DisallowUnsafeCharacters">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.SecureImageUploads">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.CheckSizeAfterScaling">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.EnableCsrfProtection">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.EnableVerboseLogging">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ConnectorNode.CacheControlSeconds">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.ExtensionNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ExtensionNode.Name">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.BackendNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.BackendNode.Name">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.BackendNode.Adapter">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.BackendNode.UseProxyCommand">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.BackendNode.Options">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.BackendsNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.BackendsNode.Collection">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.FileNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.FileNode.Name">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.FolderNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.FolderNode.Name">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.HideFilesNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.HideFilesNode.Files">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.HideFoldersNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.HideFoldersNode.Folders">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.HtmlExtensionsNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.HtmlExtensionsNode.Extensions">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.ImagesNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ImagesNode.MaxWidth">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ImagesNode.MaxHeight">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ImagesNode.Quality">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ImagesNode.Sizes">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ImagesNode.Threshold">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.LicenseNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.LicenseNode.Name">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.LicenseNode.Key">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.OptionNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.OptionNode.Name">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.OptionNode.Value">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.PermissionValue">
+            <summary/>
+        </member>
+        <member name="F:CKSource.CKFinder.Connector.Config.Nodes.PermissionValue.Allow">
+            <summary/>
+        </member>
+        <member name="F:CKSource.CKFinder.Connector.Config.Nodes.PermissionValue.Deny">
+            <summary/>
+        </member>
+        <member name="F:CKSource.CKFinder.Connector.Config.Nodes.PermissionValue.Inherit">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.PluginNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.PluginNode.Name">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.PluginNode.Options">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.PluginsNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.PluginsNode.Folder">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.PluginsNode.Collection">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.ThumbnailSizeNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ThumbnailSizeNode.Width">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ThumbnailSizeNode.Height">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ThumbnailSizeNode.Quality">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.ThumbnailSizesNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ThumbnailSizesNode.Collection">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.ThumbnailsNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ThumbnailsNode.Folder">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ThumbnailsNode.Backend">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ThumbnailsNode.Sizes">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.ResourceTypeNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ResourceTypeNode.Name">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ResourceTypeNode.Folder">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ResourceTypeNode.MaxSize">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ResourceTypeNode.AllowedExtensions">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ResourceTypeNode.DeniedExtensions">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ResourceTypeNode.LazyLoad">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ResourceTypeNode.Backend">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ResourceTypeNode.MaxSizeAsText">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.ResourceTypesNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ResourceTypesNode.Collection">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.RoleNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.Name">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.ResourceType">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.Folder">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.FolderView">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.FolderCreate">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.FolderRename">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.FolderDelete">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.FileView">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.FileRename">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.FileUpload">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.FileDelete">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.ImageResize">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.RoleNode.ImageResizeCustom">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.ImageSizeNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ImageSizeNode.Name">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ImageSizeNode.Width">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ImageSizeNode.Height">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ImageSizeNode.Quality">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.ImageSizesNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ImageSizesNode.Collection">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.Nodes.ThresholdNode">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ThresholdNode.Pixels">
+            <summary/>
+        </member>
+        <member name="P:CKSource.CKFinder.Connector.Config.Nodes.ThresholdNode.Percent">
+            <summary/>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.ConfigSectionHandler">
+            <summary>
+            A handler for connector configuration section.
+            </summary>
+        </member>
+        <member name="T:CKSource.CKFinder.Connector.Config.ConnectorBuilderConfigExtensions">
+            <summary>
+            Extensions for the <see cref="T:CKSource.CKFinder.Connector.Core.Builders.ConnectorBuilder"/> class.
+            </summary>
+        </member>
+        <member name="M:CKSource.CKFinder.Connector.Config.ConnectorBuilderConfigExtensions.LoadConfig(CKSource.CKFinder.Connector.Core.Builders.ConnectorBuilder,System.Xml.XmlNode)">
+            <summary>
+            Loads config from <c>Xml</c>.
+            </summary>
+            <param name="connectorBuilder">The connector builder.</param>
+            <param name="rootNode">A root node of <c>Xml</c> document.</param>
+            <returns>The connector builder.</returns>
+        </member>
+        <member name="M:CKSource.CKFinder.Connector.Config.ConnectorBuilderConfigExtensions.LoadConfig(CKSource.CKFinder.Connector.Core.Builders.ConnectorBuilder)">
+            <summary>
+            Loads config from application configuration file.
+            </summary>
+            <param name="connectorBuilder">The connector builder.</param>
+            <returns>The connector builder.</returns>
+        </member>
+        <member name="M:CKSource.CKFinder.Connector.Config.ConnectorBuilderConfigExtensions.LoadConfig(CKSource.CKFinder.Connector.Core.Builders.ConnectorBuilder,System.String)">
+            <summary>
+            Loads config from a file.
+            </summary>
+            <param name="connectorBuilder">The connector builder.</param>
+            <param name="configurationFileName">A file name.</param>
+            <returns>The connector builder.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Sehir>
+
+@{
+    ViewBag.Title = "Şehirler";
+}
+<link href="~/Content/admin.css" rel="stylesheet" />
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            </div>
+        </div>
+    </div>
+</header>
+<article>
+    <div class="container">
+        <div class="row">
+            <br />
+            <h2>Şehirleri Yönet</h2>
+
+            <p>
+                <a class="btn btn-primary hint--right hint--bounce hint--info" data-hint="Yeni Şehir Ekle" href="/City/Create">
+                    <span class="glyphicon glyphicon-plus"></span> Yeni Ekle
+                </a>
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Adi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EkleyenUyeAdi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.GuncellenmeTarihi)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Adi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EkleyenUyeAdi)
+                        </td>
+                        <td>
+                            @item.GuncellenmeTarihi.ToString("dd.MM.yyyy HH:mm")
+                        </td>
+                        <td>
+                            <a class="btn btn-warning hint--top hint--bounce hint--warning" data-hint="Şehir Düzenle" href="/City/Edit/@item.Id" title="Şehir Düzenle">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+
+                            <a class="btn btn-success hint--top hint--bounce hint--success" data-hint="Şehir Mekanları" href="/Place/Index/@item.Id" title="Şehir Mekanları">
+                                <span class="glyphicon glyphicon-home"></span>
+                            </a>
+
+                            <a class="btn btn-info hint--top hint--bounce hint--info" data-hint="Şehir Göster" href="/City/Detail/@item.Id" target="_blank" title="Şehir Göster">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </a>
+
+                            <a class="btn btn-danger hint--top hint--bounce hint--error" data-hint="Şehir Sil" href="/City/Delete/@item.Id" title="Şehir Sil">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</article>
+
+<script src="~/Scripts/admin.js"></script>

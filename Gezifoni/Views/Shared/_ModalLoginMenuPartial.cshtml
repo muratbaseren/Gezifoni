@@ -1,0 +1,45 @@
+@using Gezifoni.ModalLogin.Models
+@{ 
+    LoginUser currentUser = Session["login"] as LoginUser;
+}
+
+
+    @if (currentUser != null)
+    {
+        if (currentUser.RoleName == "admin")
+        {
+            <li>
+                <a href="/City/Index">
+                    <span class="glyphicon glyphicon-wrench">&nbsp;</span> Yönetim
+                </a>
+            </li>
+            <li> 
+                <a href="/Member/Index">
+                    <span class="glyphicon glyphicon-user">&nbsp;</span> Üyeler
+                </a>
+            </li>
+        }
+        <li>
+            <a href="/ModalLogin/UserProfile">
+                <span class="glyphicon glyphicon-user">&nbsp;</span>@currentUser.Username
+            </a>
+        </li>
+        <li>
+            <a href="/ModalLogin/SignOut">
+                <span class="glyphicon glyphicon-log-out">&nbsp;</span>Çýkýþ
+            </a>
+        </li>
+    }
+    else
+    {
+        <li>
+            <a href="#" role="button" data-toggle="modal" data-target="#login-modal" data-openmode="login">
+                <span class="glyphicon glyphicon-log-in">&nbsp;</span>Giriþ
+            </a>
+        </li>
+        <li>
+            <a href="#" role="button" data-toggle="modal" data-target="#login-modal" data-openmode="register">
+                <span class="glyphicon glyphicon-user">&nbsp;</span>Kayýt
+            </a>
+        </li>
+    }

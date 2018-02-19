@@ -1,0 +1,19 @@
+﻿@model int /*SehirId*/
+
+<form action="/City/AddComment/@Model" method="post">
+    <div class="row control-group">
+        <div class="form-group col-xs-10 floating-label-form-group controls">
+            <label>Yorumunuz</label>
+            <textarea type="text" class="form-control" cols="30" rows="2" placeholder="Yorumunuzu buraya giriniz" id="commenttext" name="commenttext" required="" data-validation-required-message="Lütfen bir yorum giriniz." maxlength="150"></textarea>
+            <p class="help-block text-danger"></p>
+        </div>
+        <div class="col-xs-2">
+            <div>
+                <br />
+                <button type="submit" class="btn btn-success">
+                    <span class="glyphicon glyphicon-send"></span> Gönder
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

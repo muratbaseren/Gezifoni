@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+	<appSettings>
+		<add key="_MailHost" value="mail.domain.com"  xdt:Locator="Match(key)" xdt:Transform="Remove" />
+		<add key="_MailPort" value="587"  xdt:Locator="Match(key)" xdt:Transform="Remove" />
+		<add key="_MailUid" value="username@domail.com"  xdt:Locator="Match(key)" xdt:Transform="Remove" />
+		<add key="_MailPass" value="123456"  xdt:Locator="Match(key)" xdt:Transform="Remove" />
+	</appSettings>
+	<connectionStrings>
+    	<add name="SampleDatabaseContext" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+  	</connectionStrings>
+</configuration>

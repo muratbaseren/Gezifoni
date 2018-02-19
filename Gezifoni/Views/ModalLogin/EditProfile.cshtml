@@ -1,0 +1,127 @@
+@model Gezifoni.ModalLogin.Models.LoginUser
+
+@{
+    ViewBag.Title = "Üye Düzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        padding-top: 50px;
+    }
+
+    input[type=text],
+    input[type=password] {
+        width: 280px;
+    }
+
+    .input-validation-error {
+        border-color: #f00;
+    }
+
+    .field-validation-error {
+        display: inline-block;
+        margin-left: 10px;
+        background-color: #f00;
+        color: #fff;
+        padding: 3px;
+        border-radius: 3px;
+    }
+</style>
+
+<link href="~/Content/admin.css" rel="stylesheet" />
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            </div>
+        </div>
+    </div>
+</header>
+<article>
+
+    <div class="container">
+        <div class="row">
+            @using (Html.BeginForm("EditProfile", "ModalLogin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+
+                    <div class="col-md-3">
+                        @if (string.IsNullOrEmpty(Model.ProfileImageFileName))
+                {
+                            <img src="~/images/medias/@Model.ProfileImageFileName" class="img-circle" width="128" height="128">
+                        }
+                        else
+                        {
+                            <img src="~/images/medias/@Model.ProfileImageFileName" class="img-circle" width="128" height="128" />
+                        }
+                        <br /><br />
+                        <input type="file" name="ProfileImage" id="ProfileImage" class="form-control" /><br />
+                        <div class="alert alert-info">
+                            <span class="glyphicon glyphicon-info-sign">&nbsp;</span>
+                            <span><i>Lütfen jpg, jpeg ya da png formatýnda veriniz.</i></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Id)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Surname, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "password" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Kaydet" class="btn btn-success" />
+                                @Html.ActionLink("Vazgeç", "UserProfile", "ModalLogin", null, new { @class = "btn btn-default" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</article>  

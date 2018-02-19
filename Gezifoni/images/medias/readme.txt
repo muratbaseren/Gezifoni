@@ -1,0 +1,1 @@
+﻿Bu klasör medyalar içindir.

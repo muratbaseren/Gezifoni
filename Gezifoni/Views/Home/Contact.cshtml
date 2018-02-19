@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "İletişim";
+}
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('../../images/contact-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>Bağlantı Kurun</h1>
+                    <hr class="small">
+                    <span class="subheading">
+                        Elit fusce vel sapien elit in malesuada?
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
+            <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+            <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+            <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+            <form name="sentMessage" id="contactForm" action="/Home/SendMessage" method="post">
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>İsim-Soyisim</label>
+                        <input type="text" class="form-control" placeholder="ad soyad" name="name" id="name" required data-validation-required-message="Lütfen isim ve soyisim giriniz.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>E-Posta Adresi</label>
+                        <input type="email" class="form-control" placeholder="E-Posta Adresi" id="email" name="email" required data-validation-required-message="Lütfen bir e-posta adresi giriniz.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Telefon No</label>
+                        <input type="tel" class="form-control" placeholder="Telefon No" id="phone" name="phone" required data-validation-required-message="Lütfen bir telefon numarası giriniz.">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="row control-group">
+                    <div class="form-group col-xs-12 floating-label-form-group controls">
+                        <label>Mesajınız</label>
+                        <textarea rows="5" class="form-control" placeholder="Mesajınız" id="message" name="message" required data-validation-required-message="Lütfen bir mesaj yazınız."></textarea>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <br>
+                @if (ViewBag.Result != null)
+                {
+                    <div id="success" class="alert alert-info">
+                        <span>@ViewBag.Result</span>
+                    </div>
+                }
+                <div class="row">
+                    <div class="form-group col-xs-12">
+                        <button type="submit" class="btn btn-default">Gönder</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

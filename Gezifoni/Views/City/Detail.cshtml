@@ -1,0 +1,141 @@
+﻿@model Sehir
+@{
+    ViewBag.Title = "GeziFoni - " + Model.Adi;
+    LoginUser currentUser = Session["login"] as LoginUser;
+}
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('../../images/medias/@Model.Resmi')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>@Model.Adi.ToUpper()</h1>
+                    <h2 class="subheading">@Model.Slogan</h2>
+                    <span class="meta"><a href="/Home/SearchByUserName/@Model.EkleyenUyeAdi" target="_blank">@Model.EkleyenUyeAdi</a> tarafından @Model.GuncellenmeTarihi.ToLongDateString() tarihinde güncellendi.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 class="section-heading">Tarihi</h2>
+                <hr />
+                <p>
+                    @Html.Raw(Model.Tarihi)
+                </p>
+
+                <h2 class="section-heading">Gezilecek Yerler</h2>
+                <hr />
+                <p>
+                    @Html.Raw(Model.GezilecekYer)
+                </p>
+                <a href="#">
+                    <img class="img-responsive" src="~/images/medias/@Model.Resmi" alt="GeziFoni - @Model.Adi">
+                </a>
+                <span class="caption text-muted">@Model.Slogan</span>
+
+                <h2 class="section-heading">Mekanlar</h2>
+                <hr />
+                <div class="row">
+                    @foreach (Mekan mekan in Model.Mekanlar)
+                    {
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="thumbnail">
+                                <img src="~/images/medias/@mekan.Resim">
+                                <div class="caption">
+                                    <h3>@mekan.Adi</h3>
+                                    <p>
+                                        <span class="fa fa-address-card"></span> @mekan.Adres<br />
+                                        <span class="fa fa-phone"></span> @mekan.Tel
+                                    </p>
+                                    <p>
+                                        <a href="/City/Mekan/@mekan.Id" data-toggle="modal" data-target="@("#mekanModal"+mekan.Id)" class="btn btn-info btn-sm">Detay</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="@("mekanModal"+mekan.Id)" tabindex="-1" role="dialog" aria-labelledby="myModal-label">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModal-label">@mekan.Adi</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <img class="img-rounded img-responsive" src="~/images/medias/@mekan.Resim">
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <h4>Açıklama</h4>
+                                        <p>@mekan.Aciklama</p>
+                                        <hr />
+                                        <h4>Yol Tarifi</h4>
+                                        <p>@mekan.YolTarifi</p>
+                                        <hr />
+                                        <h4>Yol Detaylı Tarif</h4>
+                                        <p>
+                                            <ul>
+                                                @foreach (var item in mekan.YolTarifBirimleri)
+                                                {
+                                                    <li>
+                                                        <i>@item.Detay</i><br />
+                                                        <span class="fa fa-map-marker"></span> <small>@item.Lokasyon.Latitude - @item.Lokasyon.Longitude</small>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <h2 class="section-heading">Yemekler</h2>
+                <hr />
+                <p>
+                    @Html.Raw(Model.Yemekler)
+                </p>
+                <h2 class="section-heading">Diğer Bilgiler</h2>
+                <hr />
+                <p>
+                    @Html.Raw(Model.DigerBilgiler)
+                </p>
+
+                <h2 class="section-heading" id="comments">Yorumlar</h2>
+                <hr />
+                <ul class="media-list">
+                    @foreach (Yorum yorum in Model.Yorumlar)
+                    {
+                        <li class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object img-circle" width="64" height="64" src="~/images/medias/@yorum.LoginUser.ProfileImageFileName">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">@yorum.LoginUser.Username</h4>
+                                @yorum.YorumMetni
+                            </div>
+                        </li>
+                    }
+                </ul>
+
+                @if (currentUser != null)
+                {
+                    @Html.Partial("_PartialCommentWriter", Model.Id)
+                }
+
+            </div>
+        </div>
+    </div>
+</article>

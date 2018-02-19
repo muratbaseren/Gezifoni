@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <configSections xdt:Transform="InsertBefore(/configuration/*[1])" />
+  <configSections xdt:Locator="XPath(/configuration/configSections[last()])">
+    <section name="ckfinder" type="CKSource.CKFinder.Connector.Config.ConfigSectionHandler, CKSource.CKFinder.Connector.Config" allowLocation="true" allowDefinition="Everywhere" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
+  </configSections>
+  <configSections xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
+  <ckfinder xmlns="https://cksource.com/ckfinder-net/schema/CKFinderConnector.xsd"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            overwriteOnUpload="false"
+            checkDoubleExtension="true"
+            disallowUnsafeCharacters="false"
+            secureImageUploads="true"
+            checkSizeAfterScaling="true"
+            xdt:Transform="InsertIfMissing">
+    <license name="" key="" />
+    <images maxWidth="1600" maxHeight="1200" quality="80">
+      <sizes>
+        <size name="small" width="480" height="320" quality="80" />
+        <size name="medium" width="600" height="480" quality="80" />
+        <size name="large" width="800" height="600" quality="80" />
+      </sizes>
+      <threshold pixels="80" percent="10" />
+    </images>
+    <thumbnails folder="thumbs" backend="CKFinderPrivate">
+      <sizes>
+        <size width="150" height="150" quality="80" />
+        <size width="300" height="300" quality="80" />
+        <size width="500" height="500" quality="80" />
+      </sizes>
+    </thumbnails>
+    <backends>
+      <!--
+        This is special file system for private CKFinder data, it shouldn't be used for normal files.
+        It shouldn't be modified unless CKFinder is hosted without access to the local file system.
+        -->
+      <backend name="CKFinderPrivate" adapter="local">
+        <option name="root" value="App_Data" />
+      </backend>
+      <backend name="default" adapter="local">
+        <option name="root" value="userfiles" />
+        <option name="baseUrl" value="/ckfinder/userfiles/" />
+      </backend>
+    </backends>
+    <resourceTypes>
+      <resourceType name="Files"
+                folder="files"
+                allowedExtensions="7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip"
+                backend="default" />
+      <resourceType name="Images"
+                folder="images"
+                allowedExtensions="bmp,gif,jpeg,jpg,png"
+                backend="default" />
+    </resourceTypes>
+    <accessControl>
+      <role name="*"
+            resourceType="*"
+            folder="*"
+            folderView="allow"
+            folderCreate="allow"
+            folderRename="allow"
+            folderDelete="allow"
+            fileView="allow"
+            fileUpload="allow"
+            fileRename="allow"
+            fileDelete="allow"
+            imageResize="allow"
+            imageResizeCustom="allow" />
+    </accessControl>
+    <htmlExtensions>
+      <extension name="html" />
+      <extension name="htm" />
+      <extension name="xml" />
+      <extension name="js" />
+    </htmlExtensions>
+    <hideFolders>
+      <folder name=".*" />
+      <folder name="CVS" />
+      <folder name="__thumbs" />
+    </hideFolders>
+    <hideFiles>
+      <file name=".*" />
+    </hideFiles>
+    <plugins folder="plugins">
+      <!--
+      <plugin name="PluginName" />
+      -->
+    </plugins>
+  </ckfinder>
+</configuration>

@@ -1,0 +1,59 @@
+@using Gezifoni.ModalLogin.Models
+@model LoginUser
+@{
+    ViewBag.Title = "Üye Profil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/admin.css" rel="stylesheet" />
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            </div>
+        </div>
+    </div>
+</header>
+<article>
+    <div class="container">
+        <div class="row">
+            <br />
+
+            <h2>Üye Profili</h2>
+            <div class="col-md-2">
+                @if (string.IsNullOrEmpty(Model.ProfileImageFileName))
+            {
+                    <img src="~/images/medias/@Model.ProfileImageFileName" class="img-circle" width="128" height="128">
+                }
+                else
+                {
+                    <img src="~/images/medias/@Model.ProfileImageFileName" class="img-circle" width="128" height="128" />
+                }
+            </div>
+
+            <div class="col-md-8">
+                <h3>@(Model.Name + " " + Model.Surname)</h3>
+                <br />
+                <h6><b>Kullanýcý adý : </b>@Model.Username</h6>
+                <h6><b>E-Posta : </b>@Model.Email</h6>
+                <br />
+                <h6><a href="#">Daha fazla... </a></h6>
+            </div>
+
+            <div class="col-md-2 text-right">
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                        <span class="glyphicon glyphicon-cog">&nbsp;</span>
+                        Ayarlar
+                        <span class="icon-cog icon-white"></span><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="@Url.Action("EditProfile")"><span class="glyphicon glyphicon-edit">&nbsp;</span> Düzenle</a></li>
+                        <li><a href="@Url.Action("DeleteProfile")" onclick="return confirm('Hesabýnýz silinsin mi?');"><span class="glyphicon glyphicon-trash">&nbsp;</span> Sil</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
